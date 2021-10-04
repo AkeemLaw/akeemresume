@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akeem-resume-deployment
+  labels:
+    app: akeem-resume
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: akeem-resume
+  template:
+    metadata:
+      labels:
+        app: akeem-resume
+    spec:
+      containers:
+      - name: akeem-resume
+        image: kimetro-resume-image:v0
+        ports:
+        - containerPort: 81

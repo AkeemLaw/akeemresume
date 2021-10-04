@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: akeem-resume
+spec:
+  type: "LoadBalancer"
+  ports:
+  - name: "http"
+    port: 81
+    targetPort: 81
+  selector:
+    name: akeem-resume
